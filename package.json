@@ -1,0 +1,19 @@
+{
+  "name": "pocstartup-fe",
+  "version": "1.0.0",
+  "description": "Projet T1 du cours Projet intégré Startup POC",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Burbanit0/POCStartUp-FE.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Burbanit0/POCStartUp-FE/issues"
+  },
+  "homepage": "https://github.com/Burbanit0/POCStartUp-FE#readme"
+}
