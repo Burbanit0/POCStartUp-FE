@@ -1,6 +1,6 @@
 export class Project {
     constructor(
-        id: string,
-        title: string
+       public id: string,
+       public title: string
     ){ }   
 }
