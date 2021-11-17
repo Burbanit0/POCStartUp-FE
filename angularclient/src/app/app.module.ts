@@ -21,6 +21,8 @@ import { RouterModule, Routes } from '@angular/router';
     ProjectFormComponent
   ],
   imports: [
+    RouterModule,
+    Routes,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
