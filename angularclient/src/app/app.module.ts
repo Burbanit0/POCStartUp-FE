@@ -22,7 +22,6 @@ import { RouterModule, Routes } from '@angular/router';
   ],
   imports: [
     RouterModule,
-    Routes,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
