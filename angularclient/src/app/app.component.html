@@ -1,59 +1,35 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<div id="app">
+  <nav class="navbar navbar-expand navbar-dark bg-dark">
+    <a href="#" class="navbar-brand">bezKoder</a>
+    <ul class="navbar-nav mr-auto" routerLinkActive="active">
+      <li class="nav-item">
+        <a href="/home" class="nav-link" routerLink="home">Home </a>
+      </li>
+      <li class="nav-item" *ngIf="showAdminBoard">
+        <a href="/admin" class="nav-link" routerLink="admin">Admin Board</a>
+      </li>
+      <li class="nav-item">
+        <a href="/user" class="nav-link" *ngIf="isLoggedIn" routerLink="user">User</a>
+      </li>
+    </ul>
 
-<div role="navigation">
- <nav>
-  <a routerLink="/users">List Users</a>
-  <a routerLink="/adduser">Add User</a>
-  <a routerLink="/projects">List Projects</a>
-  <a routerLink="/addproject">Add Project</a>
- </nav>
-  <!--/.Navbar-->
-</div>
+    <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
+      <li class="nav-item">
+        <a href="/login" class="nav-link" routerLink="login">Login</a>
+      </li>
+    </ul>
 
-
-<div class="content" role="main">
+    <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+      <li class="nav-item">
+        <a href="/profile" class="nav-link" routerLink="profile">{{ username }}</a>
+      </li>
+      <li class="nav-item">
+        <a href class="nav-link" (click)="logout()">LogOut</a>
+      </li>
+    </ul>
+  </nav>
 
   <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="card bg-dark my-5">
-          <div class="card-body">
-            <h2 class="card-title text-center text-white py-3">{{ title }}</h2>
-            <ul class="text-center list-inline py-3">
-              <li class="list-inline-item">
-                <a routerLink="/users" class="btn btn-info">List Users</a>
-              </li>
-              <li class="list-inline-item">
-                <a routerLink="/adduser" class="btn btn-info">Add User</a>
-              </li>
-              <li class="list-inline-item">
-                <a routerLink="/projects" class="btn btn-info">List Projects</a>
-              </li>
-              <li class="list-inline-item">
-                <a routerLink="/addproject" class="btn btn-info">Add Project</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <router-outlet></router-outlet>
-      </div>
-    </div>
+    <router-outlet></router-outlet>
   </div>
 </div>
-
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
-<router-outlet></router-outlet>
