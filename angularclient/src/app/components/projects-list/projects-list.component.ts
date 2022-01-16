@@ -58,7 +58,6 @@ export class ProjectsListComponent implements OnInit {
   searchTitle(): void {
     this.currentProject = {};
     this.currentIndex = -1;
-
     this.projectService.findByTitle(this.title)
       .subscribe(
         data => {

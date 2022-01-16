@@ -30,9 +30,11 @@
           {{ project.title }}
         </li>
       </ul>
-  
       <button class="m-3 btn btn-sm btn-danger" (click)="removeAllProjects()">
         Remove All
+      </button>
+      <button class="m-3 btn btn-sm btn-success" onclick="window.location.href='/addprojects'">
+        Add
       </button>
     </div>
     <div class="col-md-6">
@@ -49,7 +51,6 @@
           <label><strong>Status:</strong></label>
           {{ currentProject.published ? "Published" : "Pending" }}
         </div>
-  
         <a class="badge badge-warning" routerLink="/projects/{{ currentProject.id }}">
           Edit
         </a>

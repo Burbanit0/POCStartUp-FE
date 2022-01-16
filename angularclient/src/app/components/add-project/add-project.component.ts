@@ -12,6 +12,7 @@ export class AddProjectComponent implements OnInit {
   project: Project = {
     title: '',
     description: '',
+    // userlist
     published: false
   };
   submitted = false;
@@ -37,6 +38,9 @@ export class AddProjectComponent implements OnInit {
           console.log(error);
         });
   }
+  addUser(): void{
+    
+  };
 
   newProject(): void {
     this.submitted = false;

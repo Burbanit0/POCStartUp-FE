@@ -14,6 +14,8 @@ import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { AddProjectComponent } from './components/add-project/add-project.component';
 import { ProjectDetailsComponent } from './components/project-details/project-details.component';
 import { ProjectsListComponent } from './components/projects-list/projects-list.component';
+import { UsersListComponent } from './components/users-list/users-list.component';
+import { UserDetailsComponent } from './components/user-details/user-details.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { ProjectsListComponent } from './components/projects-list/projects-list.
     BoardUserComponent,
     AddProjectComponent,
     ProjectDetailsComponent,
-    ProjectsListComponent
+    ProjectsListComponent,
+    UsersListComponent,
+    UserDetailsComponent
   ],
   imports: [
     RouterModule,
