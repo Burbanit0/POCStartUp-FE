@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Project } from 'src/app/models/project.model';
 import { ProjectService } from 'src/app/services/project.service';
+import { User } from '../../models/user.model';
+import { Role } from 'src/app/models/role.model';
 
 @Component({
   selector: 'app-add-project',
@@ -10,9 +12,9 @@ import { ProjectService } from 'src/app/services/project.service';
 export class AddProjectComponent implements OnInit {
 
   project: Project = {
-    title: '',
+    name: '',
     description: '',
-    // userlist
+    users: [{id:'',name:'', roles:[{id:'', name:''}]}],
     published: false
   };
   submitted = false;
@@ -24,8 +26,9 @@ export class AddProjectComponent implements OnInit {
 
   saveProject(): void {
     const data = {
-      title: this.project.title,
-      description: this.project.description
+      name: this.project.name,
+      description: this.project.description,
+      users: this.project.users
     };
 
     this.projectService.create(data)
@@ -40,13 +43,15 @@ export class AddProjectComponent implements OnInit {
   }
   addUser(): void{
     
+    
   };
 
   newProject(): void {
     this.submitted = false;
     this.project = {
-      title: '',
+      name: '',
       description: '',
+      users: undefined, 
       published: false
     };
   }

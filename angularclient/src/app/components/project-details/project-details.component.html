@@ -3,13 +3,13 @@
       <h4>Project</h4>
       <form>
         <div class="form-group">
-          <label for="title">Title</label>
+          <label for="name">Title</label>
           <input
             type="text"
             class="form-control"
-            id="title"
-            [(ngModel)]="currentProject.title"
-            name="title"
+            id="name"
+            [(ngModel)]="currentProject.name"
+            name="name"
           />
         </div>
         <div class="form-group">
@@ -22,7 +22,18 @@
             name="description"
           />
         </div>
-  
+
+        <div class="form-group">
+          <label for="users">Liste users</label>
+          <input
+            type="text"
+            class="form-control"
+            id="users"
+            [(ngModel)]="currentProject.users"
+            name="users"
+          />
+        </div>
+
         <div class="form-group">
           <label><strong>Status:</strong></label>
           {{ currentProject.published ? "Published" : "Pending" }}

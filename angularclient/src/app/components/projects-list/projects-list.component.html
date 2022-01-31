@@ -4,14 +4,14 @@
         <input
           type="text"
           class="form-control"
-          placeholder="Search by title"
-          [(ngModel)]="title"
+          placeholder="Search by name"
+          [(ngModel)]="name"
         />
         <div class="input-group-append">
           <button
             class="btn btn-outline-secondary"
             type="button"
-            (click)="searchTitle()"
+            (click)="searchName()"
           >
             Search
           </button>
@@ -27,7 +27,7 @@
           [class.active]="i == currentIndex"
           (click)="setActiveProject(project, i)"
         >
-          {{ project.title }}
+          {{ project.name }}
         </li>
       </ul>
       <button class="m-3 btn btn-sm btn-danger" (click)="removeAllProjects()">
@@ -41,11 +41,20 @@
       <div *ngIf="currentProject.id">
         <h4>Project</h4>
         <div>
-          <label><strong>Title:</strong></label> {{ currentProject.title }}
+          <label><strong>Title:</strong></label> 
+          {{ currentProject.name }}
         </div>
         <div>
           <label><strong>Description:</strong></label>
           {{ currentProject.description }}
+        </div>
+        <div>
+          <label><strong>Users:</strong></label>
+          <ul>
+            <li *ngFor="let user of currentProject.users">
+              {{ user.name }}
+            </li>
+          </ul>
         </div>
         <div>
           <label><strong>Status:</strong></label>

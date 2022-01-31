@@ -3,14 +3,14 @@
       <h4>Add Project</h4>
       <div *ngIf="!submitted">
         <div class="form-group">
-          <label for="title">Title</label>
+          <label for="name">Title</label>
           <input
             type="text"
             class="form-control"
-            id="title"
+            id="name"
             required
-            [(ngModel)]="project.title"
-            name="title"
+            [(ngModel)]="project.name"
+            name="name"
           />
         </div>
   
@@ -25,20 +25,22 @@
           />
         </div>
         <div class="form-group">
-          <label for="listUsers">List of users :</label>
+          <label for="users">List of users :</label>
+          <select ng-model="userSelected">
+            <option *ngFor="let user of project.users" value="{{user}}">{{user.name}}</option>
+          </select>
           <input class="form-control"
-            id="list_users"
+            id="users"
             required
             [(ngModel)]="project.users"
-            name="list_users"
+            name="users"
           />
           <button (click)="addUser()" class="btn btn-primary">Add a user</button>
         </div>
 
         <div class="form-group">
-          <ul>
-            <li>User 1</li>
-            <li>User 2</li>
+          <ul *ngFor="let user of project.users";>
+            <li>{{user.name}}</li>
           </ul>
         </div>
         

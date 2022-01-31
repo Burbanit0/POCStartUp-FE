@@ -12,7 +12,7 @@ export class ProjectsListComponent implements OnInit {
   projects?: Project[];
   currentProject: Project = {};
   currentIndex = -1;
-  title = '';
+  name = '';
 
   constructor(private projectService: ProjectService) { }
 
@@ -55,10 +55,10 @@ export class ProjectsListComponent implements OnInit {
         });
   }
 
-  searchTitle(): void {
+  searchName(): void {
     this.currentProject = {};
     this.currentIndex = -1;
-    this.projectService.findByTitle(this.title)
+    this.projectService.findByTitle(this.name)
       .subscribe(
         data => {
           this.projects = data;

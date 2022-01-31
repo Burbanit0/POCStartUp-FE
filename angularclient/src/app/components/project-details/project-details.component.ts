@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProjectService } from 'src/app/services/project.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Project } from 'src/app/models/project.model';
+import { User } from 'src/app/models/user.model';
 
 @Component({
   selector: 'app-project-details',
@@ -11,8 +12,9 @@ import { Project } from 'src/app/models/project.model';
 export class ProjectDetailsComponent implements OnInit {
 
   currentProject: Project = {
-    title: '',
+    name: '',
     description: '',
+    users: [{id:'', name:''}],
     published: false
   };
   message = '';
@@ -41,7 +43,7 @@ export class ProjectDetailsComponent implements OnInit {
 
   updatePublished(status: boolean): void {
     const data = {
-      title: this.currentProject.title,
+      name: this.currentProject.name,
       description: this.currentProject.description,
       published: status
     };

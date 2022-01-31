@@ -2,8 +2,8 @@ import { User } from "./user.model";
 
 export class Project {
     id?: any;
-    title?: string;
+    name?: string;
     description?: string;
-    users?: User[];
+    users?: Array<User>;
     published?: boolean;
   }
