@@ -32,7 +32,7 @@ export class UserDetailsComponent implements OnInit {
       .subscribe(
         data => {
           this.currentUser = data;
-          console.log(data);
+          // console.log(data);
         },
         error => {
           console.log(error);
@@ -46,7 +46,7 @@ export class UserDetailsComponent implements OnInit {
     this.userService.update(this.currentUser.id, this.currentUser)
       .subscribe(
         response => {
-          console.log(response);
+          // console.log(response);
           this.message = response.message ? response.message : 'This user was updated successfully!';
         },
         error => {
@@ -58,7 +58,7 @@ export class UserDetailsComponent implements OnInit {
     this.userService.delete(this.currentUser.id)
       .subscribe(
         response => {
-          console.log(response);
+          // console.log(response);
           this.router.navigate(['/users']);
         },
         error => {

@@ -25,7 +25,7 @@ export class UsersListComponent implements OnInit {
       .subscribe(
         data => {
           this.users = data;
-          console.log(data);
+          // console.log(data);
         },
         error => {
           console.log(error);
@@ -47,7 +47,7 @@ export class UsersListComponent implements OnInit {
     this.userService.deleteAll()
       .subscribe(
         response => {
-          console.log(response);
+          // console.log(response);
           this.refreshList();
         },
         error => {
@@ -62,7 +62,7 @@ export class UsersListComponent implements OnInit {
       .subscribe(
         data => {
           this.users = data;
-          console.log(data);
+          // console.log(data);
         },
         error => {
           console.log(error);

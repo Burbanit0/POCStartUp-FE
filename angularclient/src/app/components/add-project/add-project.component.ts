@@ -34,7 +34,7 @@ export class AddProjectComponent implements OnInit {
     this.projectService.create(data)
       .subscribe(
         response => {
-          console.log(response);
+          // console.log(response);
           this.submitted = true;
         },
         error => {

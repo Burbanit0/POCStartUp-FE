@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ProjectService } from 'src/app/services/project.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Project } from 'src/app/models/project.model';
-import { User } from 'src/app/models/user.model';
 
 @Component({
   selector: 'app-project-details',
@@ -34,7 +33,7 @@ export class ProjectDetailsComponent implements OnInit {
       .subscribe(
         data => {
           this.currentProject = data;
-          console.log(data);
+          // console.log(data);
         },
         error => {
           console.log(error);
@@ -54,7 +53,7 @@ export class ProjectDetailsComponent implements OnInit {
       .subscribe(
         response => {
           this.currentProject.published = status;
-          console.log(response);
+          // console.log(response);
           this.message = response.message ? response.message : 'The status was updated successfully!';
         },
         error => {
@@ -68,7 +67,7 @@ export class ProjectDetailsComponent implements OnInit {
     this.projectService.update(this.currentProject.id, this.currentProject)
       .subscribe(
         response => {
-          console.log(response);
+          // console.log(response);
           this.message = response.message ? response.message : 'This project was updated successfully!';
         },
         error => {
@@ -80,7 +79,7 @@ export class ProjectDetailsComponent implements OnInit {
     this.projectService.delete(this.currentProject.id)
       .subscribe(
         response => {
-          console.log(response);
+          // console.log(response);
           this.router.navigate(['/projects']);
         },
         error => {
