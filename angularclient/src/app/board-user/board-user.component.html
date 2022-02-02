@@ -4,9 +4,14 @@
       <strong>{{ currentUser.username }}</strong>
     </h3>
   </header>
-  <strong>Projects:</strong>
+  <strong>Your projects:</strong>
   <ul>
-    <li *ngFor="let project of user.projects">
+    <li
+          class="list-group-item"
+          *ngFor="let project of projects; let i = index"
+          [class.active]="i == currentIndex"
+          (click)="setActiveProject(project, i)"
+        >
       {{ project.name }}
     </li>
   </ul>
