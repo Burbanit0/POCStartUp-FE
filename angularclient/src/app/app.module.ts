@@ -16,6 +16,8 @@ import { ProjectDetailsComponent } from './components/project-details/project-de
 import { ProjectsListComponent } from './components/projects-list/projects-list.component';
 import { UsersListComponent } from './components/users-list/users-list.component';
 import { UserDetailsComponent } from './components/user-details/user-details.component';
+import { AddWorktimeComponent } from './components/add-worktime/add-worktime.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -29,14 +31,16 @@ import { UserDetailsComponent } from './components/user-details/user-details.com
     ProjectDetailsComponent,
     ProjectsListComponent,
     UsersListComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
+    AddWorktimeComponent
   ],
   imports: [
     RouterModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]

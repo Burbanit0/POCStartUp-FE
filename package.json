@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Burbanit0/POCStartUp-FE/issues"
   },
-  "homepage": "https://github.com/Burbanit0/POCStartUp-FE#readme"
+  "homepage": "https://github.com/Burbanit0/POCStartUp-FE#readme",
+  "dependencies": {
+    "@ng-bootstrap/ng-bootstrap": "^11.0.0"
+  }
 }
