@@ -17,6 +17,30 @@
   </ul>
 </div>
 
+<div class="col-md-6">
+  <div *ngIf="currentProject.id">
+    <h4>Project</h4>
+    <div>
+      <label><strong>Title:</strong></label> 
+      {{ currentProject.name }}
+    </div>
+    <div>
+      <label><strong>Description:</strong></label>
+      {{ currentProject.description }}
+    </div>
+    <div>
+      <label><strong>Status:</strong></label>
+      {{ currentProject.published ? "Published" : "Pending" }}
+    </div>
+    <div>
+      <label><strong>Worktime:</strong></label>
+      {{ currentProject.worktime }}
+    </div>
+    <button class="m-3 btn btn-sm btn-primary">
+      Edit a Worktime
+    </button>
+  </div>
+
 <ng-template #loggedOut>
   Please login.
 </ng-template>

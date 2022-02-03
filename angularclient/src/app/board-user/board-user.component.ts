@@ -10,6 +10,7 @@ import { UserService } from '../services/user.service';
   templateUrl: './board-user.component.html',
   styleUrls: ['./board-user.component.css']
 })
+
 export class BoardUserComponent implements OnInit {
   currentUser: any;
   currentUserId: any;
@@ -22,12 +23,10 @@ export class BoardUserComponent implements OnInit {
     projects: [{id:'', name:''}],
   };
 
-
   constructor(
     private token: TokenStorageService,
     private userService: UserService) { }
 
-    
   ngOnInit(): void {
     this.currentUser = this.token.getUser();
     this.currentUserId = this.currentUser.id;
