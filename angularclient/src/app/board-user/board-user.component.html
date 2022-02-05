@@ -16,7 +16,6 @@
     </li>
   </ul>
 </div>
-
 <div class="col-md-6">
   <div *ngIf="currentProject.id">
     <h4>Project</h4>
@@ -34,7 +33,13 @@
     </div>
     <div>
       <label><strong>Worktime:</strong></label>
-      {{ currentProject.worktime }}
+        <ul>
+          <li class="list-group-item" 
+              *ngFor="let time of projectWorktime; let i = index">
+              Date: {{ time.date }}
+              Duration: {{ time.duration }}H
+            </li>
+        </ul>
     </div>
     <button class="m-3 btn btn-sm btn-primary" (click)="open(content)">
       Edit a Worktime
@@ -43,38 +48,49 @@
   <ng-template #content let-modal>
     <div class="modal-header">
       <h4 class="modal-title" id="modal-basic-title">Worktime</h4>
-      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <button type="button" 
+              class="close" 
+              aria-label="Close" 
+              (click)="modal.dismiss('Cross click')">
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
     <div class="modal-body">
       <form>
         <div class="form-group">
-          <label for="dateOfBirth">Date of the day: </label>
+          <label for="date">Date of the day: </label>
           <div class="input-group">
-            <input id="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #dp="ngbDatepicker">
+            <input id="date" 
+                required 
+                [(ngModel)]="dateChoose" 
+                class="form-control" 
+                placeholder="yyyy-mm-dd" 
+                name="dateChoose" 
+                ngbDatepicker #dp="ngbDatepicker"
+              />
             <div class="input-group-append">
               <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button"></button>
             </div>
-          </div>
-          
+          </div>  
         </div>
         <div class="form-group">
           <label for="duration">Duration: </label>
           <div class="input-group">
-            <input id="duration" class="form-control"> 
+            <input class="form-control"
+                id="duration" 
+                required 
+                [(ngModel)]="workTime.duration" 
+                name="duration"
+              /> 
           </div>
         </div>
       </form>
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+      <button type="button" class="btn btn-outline-dark" (click)="addWorktime()">Add a Worktime</button>
     </div>
   </ng-template>
   
-  <hr>
-  
-  <pre>{{ closeResult }}</pre>
 
 <ng-template #loggedOut>
   Please login.

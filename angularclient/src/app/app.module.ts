@@ -16,8 +16,8 @@ import { ProjectDetailsComponent } from './components/project-details/project-de
 import { ProjectsListComponent } from './components/projects-list/projects-list.component';
 import { UsersListComponent } from './components/users-list/users-list.component';
 import { UserDetailsComponent } from './components/user-details/user-details.component';
-import { AddWorktimeComponent } from './components/add-worktime/add-worktime.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -32,7 +32,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ProjectsListComponent,
     UsersListComponent,
     UserDetailsComponent,
-    AddWorktimeComponent
   ],
   imports: [
     RouterModule,
@@ -42,7 +41,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FormsModule,
     NgbModule
   ],
-  providers: [authInterceptorProviders],
+  providers: [authInterceptorProviders, DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

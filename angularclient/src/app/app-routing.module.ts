@@ -5,7 +5,6 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { BoardUserComponent } from './board-user/board-user.component';
-import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { ProjectsListComponent } from './components/projects-list/projects-list.component';
 import { ProjectDetailsComponent } from './components/project-details/project-details.component';
 import { AddProjectComponent } from './components/add-project/add-project.component';
