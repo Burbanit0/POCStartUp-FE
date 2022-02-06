@@ -6,7 +6,6 @@
           class="list-group-item"
           *ngFor="let user of usersGroup; let i = index"
           [class.active]="i == currentIndex"
-          (click)="setActiveUser(user, i)"
         >
           {{ user.name }}
         </li>
@@ -29,13 +28,11 @@
         <form>
           <div class="form-group">
             <label for="date">Choose a user :</label>
-            <div class="dropdown">
-              <select [(ngModel)]="selectedUser">
-                <option *ngFor="let user of usersList" [value]="user">
+              <select [(ngModel)]="selectedUser" class="form-control" name="selectedUser">
+                <option [ngValue]="user" *ngFor="let user of usersList" >
                   {{user.name}}
                 </option>
-            </select>
-            </div> 
+              </select>
           </div>
         </form>
       </div>

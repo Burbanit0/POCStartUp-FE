@@ -18,7 +18,7 @@ export class BoardManagerComponent implements OnInit {
   currentUserId: any;
   currentIndex = -1;
   name = '';
-  selectedUser:User = {};
+  selectedUser = null;
 
   constructor(
     private token: TokenStorageService,
@@ -49,10 +49,6 @@ export class BoardManagerComponent implements OnInit {
     )
   }
 
-  setActiveUser(user: User, index: number): void {
-    this.currentUser = user;
-    this.currentIndex = index;
-  }
 
   open(content:any) {
     console.log(this.usersList)
@@ -74,19 +70,18 @@ export class BoardManagerComponent implements OnInit {
   }
 
   addUser(): void {
-    console.log(this)
     console.log(this.selectedUser)
-    const data = {
-      ids: [this.selectedUser],
-    };
-    console.log(this.selectedUser)
-    this.workteamService.addUser(this.currentUserId, data).subscribe(
-      response => {
-        console.log(data)
-      },
-      error => {
-        console.log(error);
-      });
+    // const data = {
+    //   ids: [this.selectedUser],
+    // };
+    // console.log(this.selectedUser)
+    // this.workteamService.addUser(this.currentUserId, data).subscribe(
+    //   response => {
+    //     console.log(data)
+    //   },
+    //   error => {
+    //     console.log(error);
+    //   });
     // window.location.reload()
   }
 }
