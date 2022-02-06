@@ -10,7 +10,8 @@ export class AppComponent implements OnInit {
   private roles: string[] = [];
   isLoggedIn = false;
   showAdminBoard = false;
-  showModeratorBoard = false;
+  showManagerBoard = false;
+  showUserBoard = false;
   username?: string;
   title: any;
 
@@ -24,7 +25,8 @@ export class AppComponent implements OnInit {
       this.roles = user.roles;
 
       this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
-      this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
+      this.showManagerBoard = this.roles.includes('ROLE_MANAGER');
+      this.showUserBoard = this.roles.includes('ROLE_USER');
 
       this.username = user.username;
     }
