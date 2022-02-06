@@ -21,8 +21,9 @@ export class AddProjectComponent implements OnInit {
   };
   submitted = false;
   user:User = {};
-  selectedUser?: User;
-  projectUsers?: User[];
+  selectedUser: User = {};
+  projectUsers: User[] = [];
+  projectUsersId: string[] = [];
   users?: User[];
 
 
@@ -41,25 +42,48 @@ export class AddProjectComponent implements OnInit {
     )
   }
 
-  saveProject(): void {
+  async saveProject() : Promise<void> {
     const data = {
       name: this.project.name,
       description: this.project.description,
-      users: this.project.users
     };
-
-    this.projectService.create(data)
+    let projectId = "";
+    (await this.projectService.create(data))
       .subscribe(
         response => {
-          // console.log(response);
+          projectId = response.id;
           this.submitted = true;
+          this.usersproject(projectId);
         },
         error => {
           console.log(error);
         });
+    console.log(projectId);
+   
   }
+
+  usersproject(id: string): void {
+    console.log(this.projectUsersId)
+    const dt = {
+      ids: this.projectUsersId,
+    }
+    this.projectService.update(id, dt).subscribe(
+      response => {
+        console.log(response)
+      },
+      error => {
+        console.log(error);
+      });
+
+  }
+
+  ngOnChanges(){
+
+  }
+
   addUser(): void{
-    
+    this.projectUsers.push(this.selectedUser);
+    this.projectUsersId.push(this.selectedUser.id);
   };
 
   newProject(): void {

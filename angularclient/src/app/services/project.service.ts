@@ -20,12 +20,12 @@ export class ProjectService {
     return this.http.get(`${baseUrl}/${id}`);
   }
 
-  create(data: any): Observable<any> {
-    return this.http.post(baseUrl, data);
+   async create(data: any): Promise<Observable<any>> {
+    return await this.http.post(baseUrl, data);
   }
 
   update(id: any, data: any): Observable<any> {
-    return this.http.put(`${baseUrl}/${id}`, data);
+    return this.http.patch(`${baseUrl}/${id}/users`, data);
   }
 
   delete(id: any): Observable<any> {
