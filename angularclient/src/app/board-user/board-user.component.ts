@@ -10,8 +10,6 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import { Worktime } from '../models/worktime.model';
 import { DatePipe } from '@angular/common';
 import { NgForm } from '@angular/forms';
-
-
 @Component({
   selector: 'app-board-user',
   templateUrl: './board-user.component.html',
@@ -107,7 +105,6 @@ export class BoardUserComponent implements OnInit {
         console.log(data)
       },
       error => {
-        console.log(data)
         console.log(error);
       });
     window.location.reload()

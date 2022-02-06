@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
+import { BoardManagerComponent } from './board-manager/board-manager.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -17,6 +17,7 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'user', component: BoardUserComponent },
   { path: 'admin', component: UsersListComponent },
+  { path: 'manager', component: BoardManagerComponent},
   { path: 'users/:id', component: UserDetailsComponent },
   { path: 'projects', component: ProjectsListComponent },
   { path: 'projects/:id', component: ProjectDetailsComponent },

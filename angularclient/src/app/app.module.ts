@@ -18,6 +18,7 @@ import { UsersListComponent } from './components/users-list/users-list.component
 import { UserDetailsComponent } from './components/user-details/user-details.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DatePipe } from '@angular/common';
+import { BoardManagerComponent } from './board-manager/board-manager.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { DatePipe } from '@angular/common';
     ProjectsListComponent,
     UsersListComponent,
     UserDetailsComponent,
+    BoardManagerComponent,
   ],
   imports: [
     RouterModule,

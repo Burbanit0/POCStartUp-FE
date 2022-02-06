@@ -19,6 +19,9 @@ export class AddProjectComponent implements OnInit {
     published: false
   };
   submitted = false;
+  user:User = {};
+  selectedUser?: User;
+  users?: User[];
 
   constructor(private projectService: ProjectService) { }
 

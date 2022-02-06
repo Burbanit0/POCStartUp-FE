@@ -25,9 +25,11 @@
         </div>
         <div class="form-group">
           <label for="users">List of users :</label>
-          <select ng-model="userSelected">
-            <option *ngFor="let user of project.users" value="{{user}}">{{user.name}}</option>
-          </select>
+          <select [(ngModel)]="selectedUser">
+            <option *ngFor="let title of users" [value]="user.id">
+              {{user.name}}
+            </option>
+        </select>
           <input class="form-control"
             id="users"
             required
