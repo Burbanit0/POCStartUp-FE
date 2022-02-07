@@ -20,7 +20,7 @@ export class ProjectService {
     return this.http.get(`${baseUrl}/${id}`);
   }
 
-   async create(data: any): Promise<Observable<any>> {
+  async create(data: any): Promise<Observable<any>> {
     return await this.http.post(baseUrl, data);
   }
 
@@ -30,10 +30,6 @@ export class ProjectService {
 
   delete(id: any): Observable<any> {
     return this.http.delete(`${baseUrl}/${id}`);
-  }
-
-  deleteAll(): Observable<any> {
-    return this.http.delete(baseUrl);
   }
 
   findByTitle(title: any): Observable<Project[]> {
