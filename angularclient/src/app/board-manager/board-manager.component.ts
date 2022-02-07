@@ -19,6 +19,7 @@ export class BoardManagerComponent implements OnInit {
   currentIndex = -1;
   name = '';
   selectedUser: User = {};
+  selectedUserWorktime: User = {};
 
   constructor(
     private token: TokenStorageService,
@@ -82,5 +83,9 @@ export class BoardManagerComponent implements OnInit {
         console.log(error);
       });
     window.location.reload()
+  }
+
+  onSelect(user:User) : void{
+    this.selectedUserWorktime = user;
   }
 }

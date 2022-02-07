@@ -45,7 +45,7 @@ export class UserDetailsComponent implements OnInit {
 
     this.userService.update(this.currentUser.id, this.currentUser)
       .subscribe(
-        response => {
+         response => {
           // console.log(response);
           this.message = response.message ? response.message : 'This user was updated successfully!';
         },
