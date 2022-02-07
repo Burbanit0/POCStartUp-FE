@@ -13,7 +13,6 @@
             name="name"
           />
         </div>
-  
         <div class="form-group">
           <label for="description">Description</label>
           <input
@@ -26,30 +25,23 @@
         </div>
         <div class="form-group">
           <label for="users">List of users :</label>
-          <select ng-model="userSelected">
-            <option *ngFor="let user of project.users" value="{{user}}">{{user.name}}</option>
+          <select [(ngModel)]="selectedUser" class="form-control" name="selectedUser">
+            <option *ngFor="let user of users" [ngValue]="user">
+              {{user.name}}
+            </option>
           </select>
-          <input class="form-control"
-            id="users"
-            required
-            [(ngModel)]="project.users"
-            name="users"
-          />
           <button (click)="addUser()" class="btn btn-primary">Add a user</button>
+          <button (click)="delUser()" class="btn btn-primary">Delete a user</button>
         </div>
-
         <div class="form-group">
-          <ul *ngFor="let user of project.users";>
+          <ul *ngFor="let user of projectUsers">
             <li>{{user.name}}</li>
           </ul>
-        </div>
-        
+        </div>  
         <button (click)="saveProject()" class="btn btn-success">Submit</button>
         <button class="m-3 btn btn-primary" onclick="window.location.href='/projects'">
           Liste
         </button>
-      </div>
-  
       <div *ngIf="submitted">
         <h4>Project was submitted successfully!</h4>
         <button class="btn btn-success" (click)="newProject()">Add</button>

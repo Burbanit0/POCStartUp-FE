@@ -1,0 +1,21 @@
+<div *ngIf="user">
+    <label *ngIf="!wts">No working time recorded</label>
+    <div *ngIf="wts">
+        <table class="table" data-toggle="table"  data-sort-order="desc" data-sort-name="project">
+            <thead>
+              <tr>
+                <th data-field="project" data-sortable="true" scope="col">Project</th>
+                <th scope="col">Date</th>
+                <th scope="col">Duration</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let wt of wts; let index = index">
+                    <th scope="row" *ngIf="wt.project">{{wt.project.name}}</th>
+                    <td>{{wt.date}}</td>
+                    <td>{{wt.duration}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

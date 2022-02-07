@@ -1,0 +1,49 @@
+<div class="list row">
+    <div class="col-md-6">
+      <h4>Users List</h4>
+      <div class="input-group-append">
+        <button type="button" class="btn btn-outline-dark" (click)="open(content)">Add a User</button>
+      </div>
+
+      <ngb-accordion [closeOthers]="true">
+        <ngb-panel  *ngFor="let user of usersGroup; let index = index" id="static-{{index}}">
+          <ng-template ngbPanelHeader let-opened="opened">
+            <div class="d-flex align-items-center justify-content-between">
+              <span>{{user.name}}</span>
+            <button ngbPanelToggle class="btn btn-primary" (click)="onSelect(user)">{{ opened ? '-' : 'WorkTimes' }}</button>
+            </div>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            <app-user-work-times [user]="selectedUserWorktime"></app-user-work-times>
+          </ng-template>
+        </ngb-panel>
+      </ngb-accordion>
+
+    </div>
+    <ng-template #content let-modal>
+      <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Users of the group</h4>
+        <button type="button" 
+                class="close" 
+                aria-label="Close" 
+                (click)="modal.dismiss('Cross click')">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="date">Choose a user :</label>
+              <select [(ngModel)]="selectedUser" class="form-control" name="selectedUser">
+                <option [ngValue]="user" *ngFor="let user of usersList" >
+                  {{user.name}}
+                </option>
+              </select>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="addUser()">Add a User</button>
+      </div>
+    </ng-template>
+  </div>

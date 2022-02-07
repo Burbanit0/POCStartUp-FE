@@ -8,4 +8,5 @@ export class User {
     roles?: Array<Role>
     projects?: Array<Project>
     workTimes?: Array<Worktime>
+    groupUser?: number
 }
