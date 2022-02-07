@@ -14,7 +14,7 @@ export class UserWorkTimesComponent implements OnInit {
 
   @Input() user:User = {};
   response:any;
-  wts?:Array<Worktime>;
+  wts?:Array<Worktime> = [];
   projects:Array<Project> = [];
 
   constructor(
@@ -36,5 +36,7 @@ export class UserWorkTimesComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  
 
 }

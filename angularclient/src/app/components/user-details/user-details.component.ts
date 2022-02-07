@@ -42,8 +42,13 @@ export class UserDetailsComponent implements OnInit {
 
   updateUser(): void {
     this.message = '';
+    if (this.currentUser.roles){
+      const data = {
+        role: this.currentUser.roles[0].name
+      }
+      console.log(data)
 
-    this.userService.update(this.currentUser.id, this.currentUser)
+    this.userService.update(this.currentUser.id, data)
       .subscribe(
          response => {
           // console.log(response);
@@ -52,6 +57,7 @@ export class UserDetailsComponent implements OnInit {
         error => {
           console.log(error);
         });
+      }
   }
 
   deleteUser(): void {

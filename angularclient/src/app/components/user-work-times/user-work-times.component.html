@@ -1,12 +1,12 @@
 <div *ngIf="user">
     <label *ngIf="!wts">No working time recorded</label>
     <div *ngIf="wts">
-        <table class="table" data-toggle="table"  data-sort-order="desc" data-sort-name="project">
+        <table class="table"  >
             <thead>
               <tr>
-                <th data-field="project" data-sortable="true" scope="col">Project</th>
-                <th scope="col">Date</th>
-                <th scope="col">Duration</th>
+                <th scope="col" sortable="project" >Project</th>
+                <th scope="col" sortable="date" >Date</th>
+                <th scope="col" sortable="duration" >Duration</th>
               </tr>
             </thead>
             <tbody>
