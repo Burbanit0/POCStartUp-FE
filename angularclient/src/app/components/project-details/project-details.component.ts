@@ -109,6 +109,11 @@ export class ProjectDetailsComponent implements OnInit {
     this.projectUsersId.push(this.selectedUser.id);
   };
 
+  delUser(): void{
+    let a = this.currentProject.users?.pop();
+    let b = this.projectUsersId.pop();
+  };
+
   deleteProject(): void {
     this.projectService.delete(this.currentProject.id)
       .subscribe(

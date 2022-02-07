@@ -31,6 +31,7 @@
             </option>
           </select>
           <button (click)="addUser()" class="btn btn-primary">Add a user</button>
+          <button (click)="delUser()" class="btn btn-primary">Delete a user</button>
         </div>
         <div class="form-group">
           <ul *ngFor="let user of currentProject.users">
