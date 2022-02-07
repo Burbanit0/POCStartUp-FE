@@ -86,6 +86,11 @@ export class AddProjectComponent implements OnInit {
     this.projectUsersId.push(this.selectedUser.id);
   };
 
+  delUser(): void{
+    this.projectUsers.push();
+    this.projectUsersId.push();
+  };
+
   newProject(): void {
     this.submitted = false;
     this.project = {
