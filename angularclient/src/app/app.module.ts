@@ -19,6 +19,7 @@ import { UserDetailsComponent } from './components/user-details/user-details.com
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DatePipe } from '@angular/common';
 import { BoardManagerComponent } from './board-manager/board-manager.component';
+import { UserWorkTimesComponent } from './components/user-work-times/user-work-times.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { BoardManagerComponent } from './board-manager/board-manager.component';
     UsersListComponent,
     UserDetailsComponent,
     BoardManagerComponent,
+    UserWorkTimesComponent,
   ],
   imports: [
     RouterModule,
